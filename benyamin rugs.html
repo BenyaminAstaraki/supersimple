@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop authentic handwoven Persian farsh at Astaraki Rugs. Explore 6ft x 4ft, 5ft x 3ft area rugs, and runner rugs in silk and wool.">
+  <meta name="keywords" content="Persian rugs Canada, handwoven farsh, 6ft x 4ft rugs, 5ft x 3ft rugs, runner rugs, silk rugs, wool rugs, Tabriz rugs">
+  <meta name="author" content="Astaraki Rugs">
+  <title>Astaraki Rugs | Timeless Persian Farsh in Canada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #1C2526;
+      background-color: #F5E9D6;
+      background-image: url('https://www.transparenttextures.com/patterns/boteh.png');
+      background-size: 200px;
+      background-repeat: repeat;
+    }
+    header {
+      background-color: #8B0000;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 3px solid #D4A373;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo {
+      color: #F5E9D6;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      text-decoration: none;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links li a {
+      color: #F5E9D6;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    .nav-links li a:hover {
+      color: #D4A373;
+    }
+    .hamburger {
+      display: none;
+      color: #F5E9D6;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #F5E9D6;
+      padding: 2rem;
+      border-bottom: 5px solid #D4A373;
+      overflow: hidden;
+      /* Set the background image */
+      background-image: url('1532-9.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3); /* Overlay to ensure text readability */
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+    .cta-button {
+      background-color: #D4A373;
+      color: #1C2526;
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      border: 2px solid #8B0000;
+    }
+    .cta-button:hover {
+      background-color: #F5E9D6;
+      color: #8B0000;
+    }
+    .about, .products, .newsletter {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: rgba(245, 233, 214, 0.9);
+      border: 3px solid #D4A373;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+    .products-section {
+      margin-bottom: 3rem;
+    }
+    .about h2, .products h2, .products-section h3, .newsletter h2 {
+      font-family: 'Playfair Display', serif;
+      color: #8B0000;
+    }
+    .about h2, .products h2, .newsletter h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    .products-section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .about p, .newsletter p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      color: #1C2526;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+      border: 2px solid #D4A373;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #8B0000;
+      padding: 1rem;
+    }
+    .product-card p {
+      font-size: 1rem;
+      color: #1C2526;
+      padding: 0 1rem 1rem;
+    }
+    .view-more-button {
+      display: inline-block;
+      background-color: #8B0000;
+      color: #F5E9D6;
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      border: 2px solid #D4A373;
+      transition: background-color 0.3s, color 0.3s;
+      margin-top: 1rem;
+    }
+    .view-more-button:hover {
+      background-color: #F5E9D6;
+      color: #8B0000;
+    }
+    .newsletter form {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .newsletter input[type="email"] {
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 2px solid #D4A373;
+      border-radius: 5px;
+      width: 70%;
+      background-color: #F5E9D6;
+    }
+    .newsletter button {
+      background-color: #8B0000;
+      color: #F5E9D6;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .newsletter button:hover {
+      background-color: #1C2526;
+    }
+    footer {
+      background-color: #1C2526;
+      background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+      background-size: 150px;
+      color: #F5E9D6;
+      padding: 2rem;
+      text-align: center;
+    }
+    footer p {
+      margin-bottom: 1rem;
+    }
+    .social-links a {
+      color: #D4A373;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+    .social-links a:hover {
+      color: #F5E9D6;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #8B0000;
+        width: 100%;
+        padding: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-content p {
+        font-size: 1rem;
+      }
+      .newsletter form {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .newsletter input[type="email"] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">Astaraki Rugs</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <span class="hamburger">☰</span>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Timeless Persian Farsh</h1>
+      <p>Discover handwoven treasures in 6ft x 4ft, 5ft x 3ft, and 12ft x 2ft, crafted with silk and wool artistry.</p>
+      <a href="#products" class="cta-button">Explore Now</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>Our Persian Legacy</h2>
+    <p>At Astaraki Rugs, we honor the Safavid dynasty’s weaving traditions, bringing hand-knotted Persian farsh to Canada. As a Persian proverb says, “A rug woven with love warms the soul”—our founder, Benyamin, curates each piece to embody this spirit, using natural dyes and centuries-old techniques. These rugs are more than decor; they’re heirlooms of culture and craftsmanship.</p>
+  </section>
+
+  <section class="products" id="products">
+    <h2>Our Collections</h2>
+
+    <div class="products-section">
+      <h3>Treasures of 6ft x 4ft</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <!-- Placeholder for 6ft x 4ft rug image; replace with your Persian rug image -->
+          <img src="persian-rug-1.jpg" alt="Tabriz Medallion Wool Farsh">
+          <h4>Tabriz Medallion Wool Farsh</h4>
+          <p>6ft x 4ft, deep red with intricate medallion and floral patterns, handwoven in wool.</p>
+        </div>
+        <div class="product-card">
+          <!-- Placeholder for 6ft x 4ft rug image; replace with your Persian rug image -->
+          <img src="persian-rug-2.jpg" alt="Sarouk Wool Rug">
+          <h4>Wool Farsh</h4>
+          <p>6ft x 4ft, deep red tones with traditional motifs, crafted in wool.</p>
+        </div>
+      </div>
+      <a href="6ft-x-4ft-rugs.html" class="view-more-button">View More</a>
+    </div>
+
+    <div class="products-section">
+      <h3>Gems of the 5ft x 3ft</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <!-- Placeholder for 5ft x 3ft rug image; replace with your Persian rug image -->
+          <img src="persian-rug-3.jpg" alt="Nain Wool Rug">
+          <h4>Wool Farsh</h4>
+          <p>5ft x 3ft, elegant cream and navy design, handwoven in wool with natural dyes.</p>
+        </div>
+        <div class="product-card">
+          <!-- Placeholder for 5ft x 3ft rug image; replace with your Persian rug image -->
+          <img src="persian-rug-4.jpg" alt="Kashan Silk Rug">
+          <h4>Pure Silk Farsh</h4>
+          <p>5ft x 3ft, vibrant blue medallion design, crafted in silk.</p>
+        </div>
+      </div>
+      <a href="5ft-x-3ft-rugs.html" class="view-more-button">View More</a>
+    </div>
+
+    <div class="products-section">
+      <h3>Paths of Bokhara (Runners)</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <!-- Placeholder for runner rug image; replace with your Persian rug image -->
+          <img src="persian-rug-5.jpg" alt="Bokhara Wool Runner Rug">
+          <h4>Wool Runner</h4>
+          <p>8ft x 2.5ft, classic green with gul motifs, handwoven in wool using traditional Turkmen techniques.</p>
+        </div>
+        <div class="product-card">
+          <!-- Placeholder for runner rug image; replace with your Persian rug image -->
+          <img src="persian-rug-6.jpg" alt="Isfahan Silk Runner">
+          <h4>Silk Runner</h4>
+          <p>6ft x 2ft, intricate floral border, crafted in silk with a Safavid-inspired design.</p>
+        </div>
+      </div>
+      <a href="runner-rugs.html" class="view-more-button">View More</a>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Join Our Bazaar</h2>
+    <p>Subscribe to receive exclusive offers, rug care tips, and stories of our ancient craftsmanship.</p>
+    <form id="newsletter-form">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer id="contact">
+    <p>Astaraki Rugs | Milton, ON, Canada | <a href="mailto:easyway.uae@gmail.com" style="color: #D4A373; text-decoration: none;">easyway.uae@gmail.com</a></p>
+    <div class="social-links">
+      <a href="https://instagram.com">Instagram</a>
+      <a href="https://pinterest.com">Pinterest</a>
+      <a href="https://facebook.com">Facebook</a>
+    </div>
+    <p><a href="/shipping">Shipping</a> | <a href="/returns">Returns</a> | <a href="/privacy">Privacy Policy</a></p>
+  </footer>
+
+  <script>
+    // Hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Newsletter form submission
+    const newsletterForm = document.getElementById('newsletter-form');
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for joining our bazaar! You’ll receive our latest offers soon.');
+      newsletterForm.reset();
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
